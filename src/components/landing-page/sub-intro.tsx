@@ -7,14 +7,13 @@ export const SubIntro = () => {
     <>
       <Flex
         direction={{ md: "row", base: "column" }}
-        py={{ base: "60px", lg: "124px", md: "70px" }}
-        px={{ base: "20px", lg: "130px", md: "60px" }}
+        py={{ base: "60px", md: "124px" }}
+        px={{ base: "20px", md: "130px" }}
       >
         <Flex
           direction="column"
           maw={{ md: "505px" }}
           pr={{ lg: "95px", md: "20px" }}
-          justify="space-between"
         >
           <Text
             c="white"
@@ -52,6 +51,7 @@ export const SubIntro = () => {
             fw={400}
             py={{ base: "20px", md: "50px" }}
             lh={{ md: "24px" }}
+            className="archivo-font"
           >
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
@@ -60,7 +60,7 @@ export const SubIntro = () => {
           </Text>
         </Flex>
         {!mobile && (
-          <Container maw={{ base: "100%", md: "578px" }} p={0} m={0}>
+          <Container maw={{ base: "100%", md: "600px" }} p={0} m={0}>
             <Image src={introPic} w="100" h="auto" />
           </Container>
         )}

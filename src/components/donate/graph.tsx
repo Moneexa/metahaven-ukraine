@@ -19,6 +19,7 @@ export const Graph = () => {
               c="white"
               pt={18}
               ta="center"
+              className="archivo-font"
             >
               $ 280,520.68
             </Text>
@@ -27,6 +28,7 @@ export const Graph = () => {
               fw={400}
               tt="uppercase"
               c="white"
+              className="archivo-font"
             >
               raised{" "}
             </Text>
@@ -36,6 +38,7 @@ export const Graph = () => {
               tt="uppercase"
               pt={18}
               c="white"
+              className="archivo-font"
             >
               1335
             </Text>
@@ -44,6 +47,7 @@ export const Graph = () => {
               fw={400}
               tt="uppercase"
               c="white"
+              className="archivo-font"
             >
               Donations
             </Text>
@@ -53,6 +57,7 @@ export const Graph = () => {
               tt="uppercase"
               pt={18}
               c="white"
+              className="archivo-font"
             >
               $ 330,000
             </Text>
@@ -61,6 +66,7 @@ export const Graph = () => {
               fw={400}
               tt="uppercase"
               c="white"
+              className="archivo-font"
             >
               Goal
             </Text>

@@ -1,5 +1,25 @@
+@font-face {
+  font-family: "Benzin-Medium";
+  src: local("Benzin-Medium"),
+    url("/benzin-medium.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Archivo-Regular";
+  src: local("Archivo-Regular"), url("/Archivo-Regular.ttf") format("truetype")
+}
+
+* {
+  font-family: Benzin-Medium;
+
+}
+
+.archivo-font {
+  font-family: Archivo-Regular;
+}
+
 :root {
-  font-family: Inter, system-ui, Archivo, Helvetica, Arial, sans-serif;
+  font-family: Benzin-Medium;
   text-transform: uppercase;
   font-synthesis: none;
   text-rendering: optimizeLegibility;

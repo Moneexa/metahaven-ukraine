@@ -17,6 +17,7 @@ export const AvailableLandMarks = () => {
       <Flex
         direction={{ md: "row", base: "column" }}
         justify="center"
+        align="center"
         px={{ base: "20px", md: "130px" }}
       >
         {!mobile && (
@@ -30,7 +31,6 @@ export const AvailableLandMarks = () => {
             fw={400}
             c="white"
             lh={{ base: "28px", md: "67px" }}
-            pt={40}
           >
             Kharkiv government building
           </Text>
@@ -45,6 +45,7 @@ export const AvailableLandMarks = () => {
             c="white"
             pt={32}
             w="100%"
+            className="archivo-font"
           >
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim

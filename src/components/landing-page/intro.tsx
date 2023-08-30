@@ -14,7 +14,13 @@ export const IntroComp: FC<Props> = ({ displayComp }) => {
       pt={{ base: "50px", md: "100px", lg: "140px" }}
     >
       <Flex direction="column" align="start" w="100%">
-        <Text fs="normal" fz={{ base: "16px", md: "30px" }} fw={300} c="white">
+        <Text
+          fs="normal"
+          fz={{ base: "16px", md: "30px" }}
+          fw={300}
+          c="white"
+          className="archivo-font"
+        >
           Ukrainian Landmarks for posterity
         </Text>
         <Text
@@ -32,17 +38,18 @@ export const IntroComp: FC<Props> = ({ displayComp }) => {
           w="100%"
           justify={{ md: "space-between" }}
         >
-          <Container p={0} m={0} mb={90} w={{ lg: "328px", base: "298px" }}>
+          <Container p={0} m={0} mb={90} maw={{ lg: "400px", base: "298px" }}>
             <button
               style={{
                 textTransform: "uppercase",
                 padding: "18px 24px",
                 width: "100%",
+                border: "0px",
                 boxShadow: "14px 16px 8px 0px rgba(69, 19, 118, 0.50)",
               }}
             >
               <Text fz={{ base: "14px", md: "16px" }} fw={400}>
-                Acccess the landmark's hub
+                Access the landmarks hub
               </Text>
             </button>
           </Container>
@@ -51,18 +58,19 @@ export const IntroComp: FC<Props> = ({ displayComp }) => {
             p={0}
             m={0}
             mb={{ base: "13px", md: "90px" }}
-            w={{ base: "134px", lg: "144px" }}
+            maw={{ base: "134px", lg: "144px" }}
           >
             <button
               style={{
                 padding: "18px 10px",
                 width: "100%",
                 textTransform: "uppercase",
+
                 boxShadow: "14px 16px 8px 0px rgba(69, 19, 118, 0.50)",
               }}
             >
               <Text fz={{ base: "14px", md: "16px" }} fw={400}>
-                Donate now
+                Donate
               </Text>
             </button>
           </Container>

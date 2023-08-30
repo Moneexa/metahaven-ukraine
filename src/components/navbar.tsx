@@ -18,6 +18,7 @@ export function NavBar({ links, padding, rightContent }: Params) {
       <Flex
         justify="center"
         align="center"
+        id="navId"
         style={{ position: "relative", padding: padding, height: "70px" }}
       >
         <Container

@@ -24,19 +24,31 @@ export const Donate = () => {
         </Text>
       </Container>
       <Container p={0} m={0} mt={24} maw={580}>
-        <Text c="white" fz={{ md: "16px" }} fw={400} w="100%">
+        <Text
+          c="white"
+          fz={{ md: "16px" }}
+          fw={400}
+          w="100%"
+          className="archivo-font"
+        >
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua.
         </Text>
       </Container>
       <Flex direction={{ base: "column-reverse", md: "row" }}>
         <Flex direction="column" w="100%">
-          <Text fz={{ md: "16px", base: "14px" }} pt={40} fw={400} c="white">
+          <Text
+            fz={{ md: "16px", base: "14px" }}
+            pt={40}
+            fw={400}
+            c="white"
+            className="archivo-font"
+          >
             I would like to give
           </Text>
           <Flex
             direction="row"
-            gap={32}
+            gap={{ base: "18px", md: "32px" }}
             pt={32}
             w={{ md: "442px", base: "100%" }}
           >
@@ -98,10 +110,12 @@ export const Donate = () => {
             fz={{ base: "14px", md: "16px" }}
             fw={400}
             c="white"
+            className="archivo-font"
           >
             Donor wall
           </Text>
           <button
+            className="archivo-font"
             style={{
               marginLeft: "9px",
               padding: "8px",
@@ -115,20 +129,40 @@ export const Donate = () => {
         </Flex>
         <Flex direction="column" w="100%" pt={27} gap={26}>
           <Card p={18}>
-            <Text fz={{ base: "14px", md: "16px" }} tt="uppercase" fw={700}>
+            <Text
+              fz={{ base: "14px", md: "16px" }}
+              tt="uppercase"
+              fw={700}
+              className="archivo-font"
+            >
               anonymous | $103.83
             </Text>
-            <Text fz={{ base: "14px", md: "16px" }} pt={18} fw={400}>
+            <Text
+              fz={{ base: "14px", md: "16px" }}
+              pt={18}
+              fw={400}
+              className="archivo-font"
+            >
               I admire all your soldiers. firefighters, social, helpers. You
               Stand against the evil. do not give up. stay strong we are with
               you.
             </Text>
           </Card>
           <Card p={18}>
-            <Text fz={{ base: "14px", md: "16px" }} tt="uppercase" fw={700}>
+            <Text
+              fz={{ base: "14px", md: "16px" }}
+              tt="uppercase"
+              fw={700}
+              className="archivo-font"
+            >
               anonymous | $103.83
             </Text>
-            <Text fz={{ base: "14px", md: "16px" }} pt={18} fw={400}>
+            <Text
+              fz={{ base: "14px", md: "16px" }}
+              pt={18}
+              fw={400}
+              className="archivo-font"
+            >
               I admire all your soldiers. firefighters, social, helpers. You
               Stand against the evil. do not give up. stay strong we are with
               you.

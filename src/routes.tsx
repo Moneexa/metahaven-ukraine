@@ -15,7 +15,9 @@ export const router = createBrowserRouter(
     <Route
       path="/"
       element={
-        <MantineProvider theme={{ fontFamily: "var(--archivo)" }}>
+        <MantineProvider
+          theme={{ fontFamily: "Benzin-Medium, Archivo-Regular" }}
+        >
           <Layout />
         </MantineProvider>
       }

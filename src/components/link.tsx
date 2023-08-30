@@ -19,6 +19,7 @@ export function Link({ text, to, isActive }: Params) {
         px={{ base: "2px", md: "8px" }}
         fz={{ base: "12px", md: "16px" }}
         c="white"
+        className="archivo-font"
       >
         {text}
       </Text>

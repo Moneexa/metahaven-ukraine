@@ -8,8 +8,8 @@ export const ComingSoon = () => {
     <div>
       <Flex
         direction={{ base: "column", md: "row" }}
-        align="center"
         justify="center"
+        align="center"
         px={{ base: "24px", md: "130px" }}
         py={45}
       >
@@ -27,7 +27,13 @@ export const ComingSoon = () => {
               <Image src={comingSoon} w="100%" h="auto" />
             </Container>
           )}
-          <Text fz={{ base: "14px", md: "16px" }} pt={38} fw={400} c="white">
+          <Text
+            fz={{ base: "14px", md: "16px" }}
+            pt={38}
+            fw={400}
+            c="white"
+            className="archivo-font"
+          >
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
             ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
