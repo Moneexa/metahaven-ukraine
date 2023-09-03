@@ -1,8 +1,8 @@
 import { MantineProvider } from "@mantine/core";
-import { LandingPage } from "./components/landing-page/landing-page.tsx";
-import { Metaverse } from "./components/metaverse/metaverse.tsx";
+import { LandingPage } from "./components/pages/landing-page/landing-page.tsx";
+import { Metaverse } from "./components/pages/metaverse/metaverse.tsx";
 import { Layout } from "./layout.tsx";
-import { Donate } from "./components/donate/donate.tsx";
+import { Donate } from "./components/pages/donate/donate.tsx";
 
 import {
   Route,

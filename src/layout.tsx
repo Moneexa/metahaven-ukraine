@@ -1,7 +1,7 @@
-import { IntroComp } from "./components/landing-page/intro.tsx";
+import { IntroComp } from "./components/pages/landing-page/intro.tsx";
 import { Footer } from "./components/footer.tsx";
 import { useLocation } from "react-router-dom";
-import { LangButton } from "./components/LangButton.tsx";
+import { LangButton } from "./components/buttons/lang-button.tsx";
 import { NavBar } from "./components/navbar.tsx";
 import { Outlet } from "react-router-dom";
 export const Layout = () => {

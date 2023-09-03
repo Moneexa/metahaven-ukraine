@@ -1,5 +1,7 @@
 import { FC } from "react";
 import { Container, Text, Flex } from "@mantine/core";
+import { AccessButton } from "../../buttons/access-hub-button";
+import { DonateButton } from "../../buttons/donate-button";
 interface Props {
   displayComp: string;
 }
@@ -10,7 +12,7 @@ export const IntroComp: FC<Props> = ({ displayComp }) => {
       p={0}
       m={0}
       pl={{ md: "132px" }}
-      px={{ base: "30px" }}
+      px={{ base: "20px" }}
       pt={{ base: "50px", md: "100px", lg: "140px" }}
     >
       <Flex direction="column" align="start" w="100%">
@@ -27,7 +29,7 @@ export const IntroComp: FC<Props> = ({ displayComp }) => {
           fz={{ base: "40px", md: "75px" }}
           fw={400}
           c="white"
-          w={{ base: "300px", md: "653px" }}
+          w={{ base: "100%", md: "653px" }}
         >
           Metahaven Ukraine
         </Text>
@@ -38,20 +40,8 @@ export const IntroComp: FC<Props> = ({ displayComp }) => {
           w="100%"
           justify={{ md: "space-between" }}
         >
-          <Container p={0} m={0} mb={90} maw={{ lg: "400px", base: "298px" }}>
-            <button
-              style={{
-                textTransform: "uppercase",
-                padding: "18px 24px",
-                width: "100%",
-                border: "0px",
-                boxShadow: "14px 16px 8px 0px rgba(69, 19, 118, 0.50)",
-              }}
-            >
-              <Text fz={{ base: "14px", md: "16px" }} fw={400}>
-                Access the landmarks hub
-              </Text>
-            </button>
+          <Container p={0} m={0} mb={90} maw={{ lg: "400px", base: "100%" }}>
+            <AccessButton title="access the landmarks hub" />
           </Container>
 
           <Container
@@ -60,19 +50,7 @@ export const IntroComp: FC<Props> = ({ displayComp }) => {
             mb={{ base: "13px", md: "90px" }}
             maw={{ base: "134px", lg: "144px" }}
           >
-            <button
-              style={{
-                padding: "18px 10px",
-                width: "100%",
-                textTransform: "uppercase",
-
-                boxShadow: "14px 16px 8px 0px rgba(69, 19, 118, 0.50)",
-              }}
-            >
-              <Text fz={{ base: "14px", md: "16px" }} fw={400}>
-                Donate
-              </Text>
-            </button>
+            <DonateButton title="Donate" />
           </Container>
         </Flex>
       </Flex>

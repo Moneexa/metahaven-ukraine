@@ -1,9 +1,10 @@
 import { useState } from "react";
-import { Container, Flex, Text, Box } from "@mantine/core";
+import { Container, Flex, Box } from "@mantine/core";
 import accessHub from "/accessHub.jpeg";
-import { IconCircle } from "../../assets/icon-circle";
-import { IconLine } from "../../assets/icon-line";
+import { IconCircle } from "../../../assets/icon-circle";
+import { IconLine } from "../../../assets/icon-line";
 import { AlternateOne } from "./alternateOnePic";
+import { AccessButton } from "../../buttons/access-hub-button";
 export const AlternateTwo = () => {
   const [display, setDisplay] = useState("flex");
   const donateNowClick = () => {
@@ -25,19 +26,9 @@ export const AlternateTwo = () => {
         w={166}
         pos="absolute"
         style={{ zIndex: "1" }}
+        onClick={donateNowClick}
       >
-        <button
-          style={{
-            padding: "18px 24px",
-            textTransform: "uppercase",
-            width: "100%",
-          }}
-          onClick={donateNowClick}
-        >
-          <Text fz={{ base: "14px", md: "16px" }} fw={400}>
-            access landmark
-          </Text>
-        </button>
+        <AccessButton title="Access the landmark" />
       </Container>
       <Box
         pos="absolute"

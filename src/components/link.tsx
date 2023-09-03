@@ -12,6 +12,7 @@ export function Link({ text, to, isActive }: Params) {
       to={to}
       style={{
         border: isActive ? "2px solid white" : "none",
+        textDecoration: "none",
       }}
     >
       <Text

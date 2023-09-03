@@ -1,7 +1,9 @@
 import { useState } from "react";
-import { Flex, Container, Text, Box } from "@mantine/core";
+import { Flex, Container, Box } from "@mantine/core";
 import { AlternateTwo } from "./alternateTwoPic";
 import accesshub from "/accessHub.jpeg";
+import { DonateButton } from "../../buttons/donate-button";
+import { AccessButton } from "../../buttons/access-hub-button";
 export const Metaverse = () => {
   const [display, setDisplay] = useState("flex");
   const donateNowClick = () => {
@@ -17,24 +19,12 @@ export const Metaverse = () => {
             m={0}
             p={0}
             mt={{ md: "165px" }}
+            onClick={donateNowClick}
             style={{ zIndex: "1" }}
             pos="absolute"
+            w="130px"
           >
-            <button
-              style={{
-                color: "#000",
-                backgroundColor: "#fff",
-                padding: "18px 10px",
-                textTransform: "uppercase",
-                width: "130px",
-                border: "none",
-              }}
-              onClick={donateNowClick}
-            >
-              <Text fz={{ base: "14px", md: "16px" }} fw={400}>
-                Donate Now
-              </Text>
-            </button>
+            <DonateButton title="Donate" />
           </Container>
 
           {display === "none" ? (
@@ -64,21 +54,7 @@ export const Metaverse = () => {
                 mx={{ base: "20px" }}
                 style={{ zIndex: "1", position: "absolute" }}
               >
-                <button
-                  style={{
-                    color: "#000",
-                    backgroundColor: "#fff",
-                    width: "100%",
-                    padding: "18px 24px",
-                    textTransform: "uppercase",
-                    border: "none",
-                    boxShadow: "14px 16px 8px 0px rgba(69, 19, 118, 0.50)",
-                  }}
-                >
-                  <Text fz={{ base: "14px", md: "16px" }} fw={400}>
-                    Access the hub
-                  </Text>
-                </button>
+                <AccessButton />
               </Container>
             </Flex>
           )}
