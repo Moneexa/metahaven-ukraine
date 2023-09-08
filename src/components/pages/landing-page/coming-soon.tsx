@@ -9,11 +9,16 @@ export const ComingSoon = () => {
       <Flex
         direction={{ base: "column", md: "row" }}
         justify="center"
-        align="center"
+        align="end"
         px={{ base: "24px", md: "130px" }}
         py={45}
       >
-        <Flex direction="column" align="start" justify="center">
+        <Flex
+          direction="column"
+          align="start"
+          justify="center"
+          mb={{ md: "50px" }}
+        >
           <Text
             c="white"
             fz={{ base: "22px", md: "48px" }}

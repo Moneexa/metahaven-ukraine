@@ -1,12 +1,13 @@
 import { useState } from "react";
 import { Flex, Container, Box } from "@mantine/core";
 import { AlternateTwo } from "./alternateTwoPic";
-import accesshub from "/accessHub.jpeg";
 import { DonateButton } from "../../buttons/donate-button";
-import { AccessButton } from "../../buttons/access-hub-button";
+import { assignStreams } from "../../../service-provider/streaming/assign-streams";
+// import { AccessButton } from "../../buttons/access-hub-button";
 export const Metaverse = () => {
   const [display, setDisplay] = useState("flex");
-  const donateNowClick = () => {
+  const donateNowClick = async () => {
+    console.log(await assignStreams());
     if (display === "flex") {
       setDisplay("none");
     }
@@ -34,20 +35,29 @@ export const Metaverse = () => {
               justify="center"
               align="center"
               py={{ lg: "65px" }}
-              px={{ lg: "130px" }}
+              pl={{ lg: "130px" }}
             >
-              <Box p={0} m={0} maw={1440} mih={{ base: "100vh", md: "100%" }}>
-                <img
-                  src={accesshub}
-                  style={{
-                    height: "100%",
-                    width: "100%",
-                    backdropFilter: "blur(6.5px)",
-                  }}
+              <Box
+                p={0}
+                m={0}
+                w={{ base: "390px", md: "1050px" }}
+                h={{ base: "350px", md: "554px" }}
+              >
+                <iframe
+                  src="https://streams.vagon.io/streams/2a0ee0ba-b550-4f59-a046-fb0776221157"
+                  style={{ width: "100%", height: "100%" }}
                 />
-              </Box>
 
-              <Container
+                {/* <img */}
+                {/* src={accesshub} */}
+                {/* style={{ */}
+                {/* height: "100%", */}
+                {/* width: "100%", */}
+                {/* backdropFilter: "blur(6.5px)", */}
+                {/* }} */}
+                {/* /> */}
+              </Box>
+              {/* <Container
                 w={{ md: "285px" }}
                 m={0}
                 p={0}
@@ -55,7 +65,7 @@ export const Metaverse = () => {
                 style={{ zIndex: "1", position: "absolute" }}
               >
                 <AccessButton />
-              </Container>
+              </Container> */}
             </Flex>
           )}
         </Flex>
