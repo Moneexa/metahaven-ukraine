@@ -2,12 +2,12 @@ import { useState } from "react";
 import { Flex, Container, Box } from "@mantine/core";
 import { AlternateTwo } from "./alternateTwoPic";
 import { DonateButton } from "../../buttons/donate-button";
-import { assignStreams } from "../../../service-provider/streaming/assign-streams";
+import { streamResponse } from "../../../service-provider/streaming/stream-response";
 // import { AccessButton } from "../../buttons/access-hub-button";
 export const Metaverse = () => {
   const [display, setDisplay] = useState("flex");
   const donateNowClick = async () => {
-    console.log(await assignStreams());
+    console.log(await streamResponse());
     if (display === "flex") {
       setDisplay("none");
     }

@@ -20,6 +20,6 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src"],
+  "include": ["src", "server/src/streaming-service/myTypes.ts", "server/src/streaming-service/headers.ts"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

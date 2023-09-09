@@ -1,16 +1,27 @@
 import axios from 'axios';
-import { generateAuthorizationHeader } from "./headers"
+import { generateNonce } from './header/generate-nonce'
+import { calculateHMAC } from './header/hmac-calculate'
 import { makeGetRequest } from './get-streams';
-import { AssignStreamMachineApiBody } from './myTypes';
-import { startStreams } from './start-stream';
+import { AssignStreamMachineApiBody } from '../myTypes';
+
+
+function generateAuthorizationHeader(requestType: string, payloadString: string, requestBody?: string) {
+    const apiKey = process.env.API_KEY
+    const nonce = generateNonce();
+    const timestamp = Date.now().toString();
+    const payload = `${apiKey}${requestType}${payloadString}${timestamp}${nonce}${requestBody || ""}`;
+    const signature = calculateHMAC(payload);
+    return `HMAC ${apiKey}:${signature}:${nonce}:${timestamp}`;
+}
+
+
+
 export async function assignStreams() {
 
     const params = await makeGetRequest();
     if (!params) {
         return { 'msg': 'error' }
     }
-    const resp = await startStreams();
-    console.log(resp)
     const reqBody: AssignStreamMachineApiBody = {
         region: params?.region,
         user_id: ""
@@ -32,7 +43,8 @@ export async function assignStreams() {
 
         }
     } catch (error) {
-        console.error('Error:', error);
+        //@ts-ignore
+        console.error('Error:', error?.message);
     }
 }
 

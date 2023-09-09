@@ -1,14 +1,14 @@
-import axios from 'axios';
-import { generateAuthorizationHeader } from "./headers"
-import { makeGetRequest } from './get-streams';
-import { AssignStreamMachineApiBody } from './myTypes';
-export async function startStreams() {
+const axios = require('axios');
+const generateAuthorizationHeader = require("../headers.ts")
+const makeGetRequest = require('./get-streams');
+const AssignStreamMachineApiBody = require('../myTypes');
+async function startStreams() {
 
     const params = await makeGetRequest();
     if (!params) {
         return { 'msg': 'error' }
     }
-    const reqBody: AssignStreamMachineApiBody = {
+    const reqBody = {
         region: params?.region,
     }
 
