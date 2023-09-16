@@ -1,8 +1,10 @@
 import { Text } from "@mantine/core";
+import { useNavigate } from "react-router-dom";
 interface Params {
   title?: string;
 }
 export const DonateButton = ({ title }: Params) => {
+  const navigate = useNavigate();
   return (
     <button
       style={{
@@ -10,6 +12,9 @@ export const DonateButton = ({ title }: Params) => {
         width: "100%",
         textTransform: "uppercase",
         boxShadow: "14px 16px 8px 0px rgba(69, 19, 118, 0.50)",
+      }}
+      onClick={() => {
+        navigate("/donate");
       }}
     >
       <Text fz={{ base: "14px", md: "16px" }} fw={400}>

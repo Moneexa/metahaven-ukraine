@@ -1,12 +1,32 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Flex, Text } from "@mantine/core";
 
 export function LangButton() {
   const [clicked, setClicked] = useState(false);
   const [selectedLang, setSelectedLang] = useState("EN");
+  const clickedRef = useRef<SVGSVGElement>(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        clickedRef.current &&
+        !clickedRef.current.contains(event.target as Node)
+      ) {
+        setClicked(!clicked);
+      }
+    };
+
+    document.addEventListener("click", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+    };
+  }, [clicked]);
+
   const onDropDownCick = () => {
     setClicked(!clicked);
   };
+
   const onSelectedLang = (languageSelected: string) => {
     const lang = languageSelected;
     setSelectedLang(lang);
@@ -40,6 +60,7 @@ export function LangButton() {
           {selectedLang}
           {clicked ? (
             <svg
+              ref={clickedRef}
               xmlns="http://www.w3.org/2000/svg"
               width="15"
               height="12"
