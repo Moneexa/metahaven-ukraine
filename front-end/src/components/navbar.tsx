@@ -31,7 +31,7 @@ export function NavBar({ links, padding, rightContent }: Params) {
         </Container>
         <Container
           style={{ right: 0, position: "absolute" }}
-          pr={{ md: "130px" }}
+          pr={{ md: "10px", lg: "130px" }}
         >
           <Container display={{ base: "none", md: "block" }}>
             {rightContent}
@@ -60,7 +60,14 @@ export function NavBar({ links, padding, rightContent }: Params) {
         >
           <Container style={{ alignSelf: "center" }}>{rightContent}</Container>
           {links.map((link) => (
-            <Link to={link.to} text={link.text} isActive={link.isActive} />
+            <Link
+              onClick={() => {
+                setDropDownVisible(false);
+              }}
+              to={link.to}
+              text={link.text}
+              isActive={link.isActive}
+            />
           ))}
         </Container>
       )}

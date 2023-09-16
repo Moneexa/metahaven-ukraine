@@ -5,13 +5,15 @@ interface Params {
   to: string;
   text: string;
   isActive?: boolean;
+  onClick?: () => void;
 }
-export function Link({ text, to, isActive }: Params) {
+export function Link({ text, to, isActive, onClick }: Params) {
   return (
     <RouterLink
+      onClick={onClick}
       to={to}
       style={{
-        border: isActive ? "2px solid white" : "none",
+        border: isActive ? "2px solid white" : "2px solid transparent",
         textDecoration: "none",
       }}
     >
