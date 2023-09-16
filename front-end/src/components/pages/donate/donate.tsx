@@ -70,7 +70,7 @@ export const Donate = () => {
                 border: "1px solid white",
               }}
             >
-              $50
+              $100
             </button>
             <button
               style={{
@@ -80,7 +80,7 @@ export const Donate = () => {
                 border: "1px solid white",
               }}
             >
-              $50
+              $150
             </button>
           </Flex>
           <Container m={0} p={0} pt={58} maw={{ md: "564px" }}>
