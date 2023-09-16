@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vagon
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: vagon
+  template:
+    metadata:
+      labels:
+        app: vagon
+    spec:
+      containers:
+        - name: vagon
+          image: vagon.azurecr.io/frontend:latest
+          ports:
+              - containerPort: 80
+              - containerPort: 5173
