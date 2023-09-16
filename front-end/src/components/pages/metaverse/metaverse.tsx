@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Flex, Container, Box } from "@mantine/core";
 import { AlternateTwo } from "./alternateTwoPic";
 import { DonateButton } from "../../buttons/donate-button";
@@ -6,8 +6,14 @@ import { streamResponse } from "../../../service-provider/streaming/stream-respo
 // import { AccessButton } from "../../buttons/access-hub-button";
 export const Metaverse = () => {
   const [display, setDisplay] = useState("flex");
+  useEffect(() => {
+    const funct = async () => {
+      console.log(await streamResponse());
+    };
+    funct();
+  }, []);
   const donateNowClick = async () => {
-    console.log(await streamResponse());
+    // console.log(await streamResponse());
     if (display === "flex") {
       setDisplay("none");
     }
