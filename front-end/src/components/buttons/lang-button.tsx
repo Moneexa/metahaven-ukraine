@@ -4,7 +4,7 @@ import { Flex, Text } from "@mantine/core";
 export function LangButton() {
   const [clicked, setClicked] = useState(false);
   const [selectedLang, setSelectedLang] = useState("EN");
-  const clickedRef = useRef<SVGSVGElement>(null);
+  const clickedRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -12,7 +12,7 @@ export function LangButton() {
         clickedRef.current &&
         !clickedRef.current.contains(event.target as Node)
       ) {
-        setClicked(!clicked);
+        setClicked(false);
       }
     };
 
@@ -49,18 +49,19 @@ export function LangButton() {
       <Flex direction="column">
         <Flex
           onClick={onDropDownCick}
+          ref={clickedRef}
           style={{
             border: "2px solid white",
             padding: "2px 6px",
             color: "white",
             alignItems: "center",
             position: "relative",
+            cursor: "pointer",
           }}
         >
           {selectedLang}
           {clicked ? (
             <svg
-              ref={clickedRef}
               xmlns="http://www.w3.org/2000/svg"
               width="15"
               height="12"
@@ -88,6 +89,7 @@ export function LangButton() {
               top: "58px", // Adjust this value as needed
               left: "36",
               zIndex: "1",
+              cursor: "pointer",
             }}
           >
             <Flex direction="column" bg="white" py={5.5} pl={8} pr={26} w={19}>
