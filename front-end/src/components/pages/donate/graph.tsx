@@ -73,9 +73,8 @@ export const Graph = () => {
           </Flex>
         }
         sections={[
-          { value: 10, color: "#fff" },
-          { value: 15, color: "#fff" },
-          { value: 25, color: "#fff" },
+          { value: 75, color: "#fff" },
+          { value: 25, color: "rgba(255, 255, 255, 0.50)" },
         ]}
       />
     </Flex>

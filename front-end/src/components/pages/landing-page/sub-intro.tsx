@@ -9,12 +9,10 @@ export const SubIntro = () => {
         direction={{ md: "row", base: "column" }}
         py={{ base: "60px", md: "124px" }}
         px={{ base: "20px", md: "130px" }}
+        justify={{ md: "space-between" }}
+        align="center"
       >
-        <Flex
-          direction="column"
-          maw={{ md: "505px" }}
-          pr={{ lg: "95px", md: "20px" }}
-        >
+        <Flex direction="column" pr={{ lg: "95px", md: "20px" }}>
           <Text
             c="white"
             fz={{ base: "20px", md: "48px" }}
@@ -41,7 +39,7 @@ export const SubIntro = () => {
             awareness efforts
           </Text>
           {mobile && (
-            <Container maw={{ base: "100%", md: "578px" }} pt={20} p={0} m={0}>
+            <Container miw={{ base: "100%", md: "578px" }} pt={20} p={0} m={0}>
               <Image src={introPic} w="100" h="auto" />
             </Container>
           )}
@@ -60,7 +58,7 @@ export const SubIntro = () => {
           </Text>
         </Flex>
         {!mobile && (
-          <Container maw={{ base: "100%", md: "600px" }} p={0} m={0}>
+          <Container miw={{ base: "100%", md: "600px" }} p={0} m={0}>
             <Image src={introPic} w="100" h="auto" />
           </Container>
         )}

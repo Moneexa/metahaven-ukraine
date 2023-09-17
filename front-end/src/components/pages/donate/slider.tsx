@@ -1,8 +1,11 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Flex, Text } from "@mantine/core";
 import "./slider.css";
-export const Slider = () => {
+export const Slider = (props: { donate: number }) => {
   const [val, setVal] = useState("");
+  useEffect(() => {
+    setVal(`${props.donate}`);
+  }, [props.donate]);
   const changeHandler = (event: { target: { value: string } }) => {
     setVal(event.target.value);
   };
@@ -17,17 +20,8 @@ export const Slider = () => {
           $1000
         </Text>
       </Flex>
+
       <div className="slidecontainer">
-        <span
-          style={{
-            color: "white",
-            position: "absolute",
-            left: `${(Number(val) / 1020) * 100 - 3}%`,
-            top: "-26px",
-          }}
-        >
-          ${val}
-        </span>
         <input
           type="range"
           min={20}
@@ -41,6 +35,16 @@ export const Slider = () => {
           className="slider"
           id="myRange"
         />
+        <span
+          style={{
+            color: "white",
+            position: "absolute",
+            left: `${(Number(val) / 1020) * 100 - 3}%`,
+            bottom: "-26px",
+          }}
+        >
+          {Number(val) > 0 && `$${val}`}
+        </span>
       </div>
     </>
   );

@@ -1,4 +1,4 @@
-import { Flex, Container, Text, Image } from "@mantine/core";
+import { Flex, Box, Text, Image } from "@mantine/core";
 import { useMediaQuery } from "@mantine/hooks";
 import landmark from "/landmark.jpeg";
 import { AccessButton } from "../../buttons/access-hub-button";
@@ -17,14 +17,14 @@ export const AvailableLandMarks = () => {
       </Text>
       <Flex
         direction={{ md: "row", base: "column" }}
-        justify="center"
+        justify={{ md: "space-between", base: "center" }}
         align="center"
         px={{ base: "20px", md: "130px" }}
       >
         {!mobile && (
-          <Container m={0} p={0} maw={{ md: "505px", base: "100%" }}>
+          <Box m={0} p={0} maw={{ md: "505px" }}>
             <Image w="100%" h="auto" src={landmark} />
-          </Container>
+          </Box>
         )}
         <Flex direction="column" pl={{ md: "99px" }}>
           <Text
@@ -36,9 +36,9 @@ export const AvailableLandMarks = () => {
             Kharkiv government building
           </Text>
           {mobile && (
-            <Container m={0} pt={20} p={0} maw={{ base: "100%" }}>
+            <Box m={0} pt={20} p={0}>
               <Image w="100%" h="auto" src={landmark} />
-            </Container>
+            </Box>
           )}
           <Text
             fz={{ md: "16px", base: "14px" }}
@@ -53,14 +53,14 @@ export const AvailableLandMarks = () => {
             ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
             aliquip ex ea commodo consequat.
           </Text>
-          <Container
+          <Box
             p={0}
             m={0}
             mt={{ base: "30px", md: "75px" }}
             w={{ base: "100%", md: "276px" }}
           >
             <AccessButton />
-          </Container>
+          </Box>
         </Flex>
       </Flex>
     </div>

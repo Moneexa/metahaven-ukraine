@@ -1,7 +1,12 @@
+import { useState } from "react";
 import { Text, Flex, Container, Card } from "@mantine/core";
 import { Graph } from "./graph";
 import { Slider } from "./slider";
 export const Donate = () => {
+  const [donate, setDonate] = useState(0);
+  const handleDonate = (val: number) => {
+    setDonate(val);
+  };
   return (
     <Flex
       direction="column"
@@ -53,38 +58,44 @@ export const Donate = () => {
             w={{ md: "442px", base: "100%" }}
           >
             <button
+              onClick={() => handleDonate(50)}
               style={{
                 color: "white",
                 backgroundColor: "transparent",
                 padding: "8px 24px",
                 border: "1px solid white",
+                cursor: "pointer",
               }}
             >
               $50
             </button>
             <button
+              onClick={() => handleDonate(100)}
               style={{
                 color: "white",
                 backgroundColor: "transparent",
                 padding: "8px 24px",
                 border: "1px solid white",
+                cursor: "pointer",
               }}
             >
               $100
             </button>
             <button
+              onClick={() => handleDonate(150)}
               style={{
                 color: "white",
                 backgroundColor: "transparent",
                 padding: "8px 24px",
                 border: "1px solid white",
+                cursor: "pointer",
               }}
             >
               $150
             </button>
           </Flex>
           <Container m={0} p={0} pt={58} maw={{ md: "564px" }}>
-            <Slider />
+            <Slider donate={donate} />
           </Container>
           <Container m={0} p={0} pt={72} w={{ base: "100%", md: "194px" }}>
             <button
