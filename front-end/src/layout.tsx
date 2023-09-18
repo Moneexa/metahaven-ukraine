@@ -4,18 +4,19 @@ import { useLocation } from "react-router-dom";
 import { LangButton } from "./components/buttons/lang-button.tsx";
 import { NavBar } from "./components/navbar.tsx";
 import { Outlet } from "react-router-dom";
+import { Box } from "@mantine/core";
 export const Layout = () => {
   const location = useLocation();
   const path = location.pathname;
   return (
     <>
-      <div
+      <Box
         style={{
           backgroundImage: "url('/Rectangle 3.jpeg')",
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
-          backgroundPositionX: "center",
         }}
+        bgp={{ base: "top center", xl: "center center" }}
       >
         <NavBar
           links={[
@@ -32,7 +33,7 @@ export const Layout = () => {
           rightContent={<LangButton />}
         />
         <IntroComp displayComp={path === "/" ? "block" : "none"} />
-      </div>
+      </Box>
       <Outlet />
       <Footer />
     </>
