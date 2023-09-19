@@ -6,6 +6,20 @@ export function LangButton() {
   const [clicked, setClicked] = useState(false);
   const clickedRef = useRef<HTMLDivElement>(null);
   const [searchParams, setSearchParams] = useSearchParams();
+  const [showDropdown, setShowDropdown] = useState(true); // Added state for showing/hiding dropdown
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // Adjust the value (100 in this case) as needed based on when you want to show the dropdown
+      setShowDropdown(window.scrollY < 100);
+    };
+
+    document.addEventListener("scroll", handleScroll);
+
+    return () => {
+      document.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -91,6 +105,7 @@ export function LangButton() {
               left: "36",
               zIndex: "1",
               cursor: "pointer",
+              display: showDropdown ? "flex" : "none",
             }}
           >
             <Flex direction="column" bg="white" py={5.5} pl={8} pr={26} w={19}>

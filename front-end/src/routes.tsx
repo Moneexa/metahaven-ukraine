@@ -3,6 +3,7 @@ import { LandingPage } from "./components/pages/landing-page/landing-page.tsx";
 import { Metaverse } from "./components/pages/metaverse/metaverse.tsx";
 import { Layout } from "./layout.tsx";
 import { Donate } from "./components/pages/donate/donate.tsx";
+import { AboutPage } from "./components/pages/about-page/about-page.tsx";
 
 import {
   Route,
@@ -25,6 +26,7 @@ export const router = createBrowserRouter(
       <Route index element={<LandingPage />} />
       <Route path="metaverse" element={<Metaverse />} />
       <Route path="donate" element={<Donate />} />
+      <Route path="about-page" element={<AboutPage />} />
     </Route>
   )
 );

@@ -38,9 +38,13 @@ export const Layout = () => {
               text: translations["DONATE"][lang],
               isActive: path === "/donate",
             },
-            { to: "/", text: translations["ABOUT PAGE"][lang] },
+            {
+              to: "/about-page",
+              text: translations["ABOUT PAGE"][lang],
+              isActive: path === "/about-page",
+            },
           ]}
-          padding="10px"
+          padding={{ md: "10px", base: "8px" }}
           rightContent={<LangButton />}
         />
         <IntroComp displayComp={path === "/" ? "block" : "none"} />
