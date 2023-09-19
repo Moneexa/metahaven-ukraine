@@ -144,4 +144,10 @@ export default {
     FR: "À PROPOS DE LA PAGE",
     UA: "ПРО СТОРІНКУ",
   },
+  HOME: {
+    EN: "HOME",
+    ES: "hogar",
+    FR: "maison",
+    UA: "додому",
+  },
 };

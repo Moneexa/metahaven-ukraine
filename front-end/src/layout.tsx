@@ -5,9 +5,12 @@ import { LangButton } from "./components/buttons/lang-button.tsx";
 import { NavBar } from "./components/navbar.tsx";
 import { Outlet } from "react-router-dom";
 import { Box } from "@mantine/core";
+import translations from "./languages/Translations.ts";
+import { useLang } from "./hooks/lang.tsx";
 export const Layout = () => {
   const location = useLocation();
   const path = location.pathname;
+  const lang = useLang();
   return (
     <>
       <Box
@@ -20,14 +23,22 @@ export const Layout = () => {
       >
         <NavBar
           links={[
-            { to: "/", text: "HOME", isActive: path === "/" },
+            {
+              to: "/",
+              text: translations["HOME"][lang],
+              isActive: path === "/",
+            },
             {
               to: "/metaverse",
-              text: "METAVERSE",
+              text: translations["METAVERSE"][lang],
               isActive: path === "/metaverse",
             },
-            { to: "/donate", text: "DONATE", isActive: path === "/donate" },
-            { to: "/", text: "ABOUT PAGE" },
+            {
+              to: "/donate",
+              text: translations["DONATE"][lang],
+              isActive: path === "/donate",
+            },
+            { to: "/", text: translations["ABOUT PAGE"][lang] },
           ]}
           padding="10px"
           rightContent={<LangButton />}

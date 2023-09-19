@@ -1,6 +1,9 @@
 import { Flex, Text, Image, Container } from "@mantine/core";
 import socialMedia from "/socialMedia.png";
+import translations from "../languages/Translations";
+import { useLang } from "../hooks/lang";
 export const Footer = () => {
+  const lang = useLang();
   return (
     <Flex
       bg="black"
@@ -46,7 +49,7 @@ export const Footer = () => {
           fw={400}
           className="archivo-font"
         >
-          Follow us here
+          {translations["FOLLOW US HERE"][lang]}
         </Text>
         <Container p={0} m={0} maw={224}>
           <Image src={socialMedia} w="100%" height="auto" />
