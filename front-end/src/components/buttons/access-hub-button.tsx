@@ -1,10 +1,13 @@
 import { Text } from "@mantine/core";
 import { useNavigate } from "react-router-dom";
+import { useLang } from "../../hooks/lang";
+import translations from "../../languages/Translations";
 interface Props {
   title?: string;
 }
 export const AccessButton = ({ title }: Props) => {
   const navigate = useNavigate();
+  const lang = useLang();
   return (
     <button
       style={{
@@ -18,7 +21,7 @@ export const AccessButton = ({ title }: Props) => {
       }}
     >
       <Text fz={{ base: "14px", md: "16px" }} fw={400}>
-        {title ? title : "access the hub"}
+        {title ? title : translations["ACCESS THE HUB"][lang]}
       </Text>
     </button>
   );

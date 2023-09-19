@@ -1,6 +1,7 @@
 import { Burger, Container, Flex } from "@mantine/core";
 import { useState } from "react";
 import { Link } from "./link";
+import { useLocation } from "react-router-dom";
 interface Params {
   links: {
     to: string;
@@ -13,6 +14,7 @@ interface Params {
 
 export function NavBar({ links, padding, rightContent }: Params) {
   const [dropDownVisible, setDropDownVisible] = useState(false);
+  const location = useLocation();
   return (
     <div style={{ height: "100%", overflow: "hidden" }}>
       <Flex
@@ -26,7 +28,12 @@ export function NavBar({ links, padding, rightContent }: Params) {
           display={{ base: "none", md: "flex" }}
         >
           {links.map((link) => (
-            <Link to={link.to} text={link.text} isActive={link.isActive} />
+            <Link
+              to={link.to}
+              queryParams={location.search}
+              text={link.text}
+              isActive={link.isActive}
+            />
           ))}
         </Container>
         <Container

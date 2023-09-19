@@ -2,10 +2,13 @@ import { FC } from "react";
 import { Container, Box, Text, Flex } from "@mantine/core";
 import { AccessButton } from "../../buttons/access-hub-button";
 import { DonateButton } from "../../buttons/donate-button";
+import translations from "../../../languages/Translations";
+import { useLang } from "../../../hooks/lang";
 interface Props {
   displayComp: string;
 }
 export const IntroComp: FC<Props> = ({ displayComp }) => {
+  const lang = useLang();
   return (
     <Box
       style={{ display: displayComp }}
@@ -22,14 +25,14 @@ export const IntroComp: FC<Props> = ({ displayComp }) => {
           c="white"
           className="archivo-font"
         >
-          Ukrainian Landmarks for posterity
+          {translations["UKRAINIAN LANDMARKS FOR POSTERITY"][lang]}
         </Text>
         <Flex direction="column">
           <Text fz={{ base: "40px", md: "75px" }} fw={400} c="white">
-            Metahaven
+            {translations["METAHAVEN UKRAINE"][lang].split(" ")[0]}
           </Text>
           <Text fz={{ base: "40px", md: "75px" }} fw={400} c="white">
-            Ukraine
+            {translations["METAHAVEN UKRAINE"][lang].split(" ")[1]}
           </Text>
         </Flex>
         <Flex
@@ -40,11 +43,13 @@ export const IntroComp: FC<Props> = ({ displayComp }) => {
           justify={{ md: "space-between" }}
         >
           <Container p={0} m={0} mb={90}>
-            <AccessButton title="access the landmarks hub" />
+            <AccessButton
+              title={translations["ACCESS THE LANDMARK'S HUB"][lang]}
+            />
           </Container>
 
           <Container p={0} m={0} mb={{ base: "13px", md: "90px" }}>
-            <DonateButton title="Donate" />
+            <DonateButton title={translations["DONATE"][lang]} />
           </Container>
         </Flex>
       </Flex>

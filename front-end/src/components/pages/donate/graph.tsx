@@ -1,9 +1,11 @@
 import { Flex, Text, RingProgress } from "@mantine/core";
 import { useMediaQuery } from "@mantine/hooks";
+import translations from "../../../languages/Translations";
+import { useLang } from "../../../hooks/lang";
 
 export const Graph = () => {
   const mobile = useMediaQuery("(max-width:760px)");
-
+  const lang = useLang();
   return (
     <Flex direction="column" align="center">
       <RingProgress
@@ -30,7 +32,7 @@ export const Graph = () => {
               c="white"
               className="archivo-font"
             >
-              raised{" "}
+              {translations["RAISED"][lang]}{" "}
             </Text>
             <Text
               fz={{ md: "16px", base: "14px" }}
@@ -49,7 +51,7 @@ export const Graph = () => {
               c="white"
               className="archivo-font"
             >
-              Donations
+              {translations["DONATIONS"][lang]}
             </Text>
             <Text
               fz={{ md: "16px", base: "14px" }}
@@ -68,7 +70,7 @@ export const Graph = () => {
               c="white"
               className="archivo-font"
             >
-              Goal
+              {translations["GOAL"][lang]}
             </Text>
           </Flex>
         }

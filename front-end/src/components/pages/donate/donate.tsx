@@ -2,7 +2,10 @@ import { useState } from "react";
 import { Text, Flex, Container, Card } from "@mantine/core";
 import { Graph } from "./graph";
 import { Slider } from "./slider";
+import translations from "../../../languages/Translations";
+import { useLang } from "../../../hooks/lang";
 export const Donate = () => {
+  const lang = useLang();
   const [donate, setDonate] = useState(0);
   const handleDonate = (val: number) => {
     setDonate(val);
@@ -25,7 +28,7 @@ export const Donate = () => {
           fw={400}
           c="white"
         >
-          Donate to Support the Reconstruction Efforts
+          {translations["DONATE TO SUPPORT THE RECONSTRUCTION EFFORTS"][lang]}
         </Text>
       </Container>
       <Container p={0} m={0} mt={24} maw={580}>
@@ -49,7 +52,7 @@ export const Donate = () => {
             c="white"
             className="archivo-font"
           >
-            I would like to give
+            {translations["I WOULD LIKE TO"][lang]}
           </Text>
           <Flex
             direction="row"
@@ -107,7 +110,7 @@ export const Donate = () => {
               }}
             >
               <Text fz={{ base: "14px", md: "16px" }} tt="uppercase" fw={400}>
-                donate now
+                {translations["DONATE NOW"][lang]}
               </Text>
             </button>
           </Container>
@@ -123,7 +126,7 @@ export const Donate = () => {
             c="white"
             className="archivo-font"
           >
-            Donor wall
+            {translations["DONOR WALL"][lang]}
           </Text>
           <button
             className="archivo-font"

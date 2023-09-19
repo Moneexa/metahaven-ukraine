@@ -1,10 +1,13 @@
 import { Text } from "@mantine/core";
 import { useNavigate } from "react-router-dom";
+import { useLang } from "../../hooks/lang";
+import translations from "../../languages/Translations";
 interface Params {
   title?: string;
 }
 export const DonateButton = ({ title }: Params) => {
   const navigate = useNavigate();
+  const lang = useLang();
   return (
     <button
       style={{
@@ -18,7 +21,7 @@ export const DonateButton = ({ title }: Params) => {
       }}
     >
       <Text fz={{ base: "14px", md: "16px" }} fw={400}>
-        {title ? title : "Donate Now"}
+        {title ? title : translations["COMING SOON"][lang]}
       </Text>
     </button>
   );

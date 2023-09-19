@@ -1,10 +1,11 @@
 import { useState, useEffect, useRef } from "react";
 import { Flex, Text } from "@mantine/core";
+import { useSearchParams } from "react-router-dom";
 
 export function LangButton() {
   const [clicked, setClicked] = useState(false);
-  const [selectedLang, setSelectedLang] = useState("EN");
   const clickedRef = useRef<HTMLDivElement>(null);
+  const [searchParams, setSearchParams] = useSearchParams();
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -29,7 +30,7 @@ export function LangButton() {
 
   const onSelectedLang = (languageSelected: string) => {
     const lang = languageSelected;
-    setSelectedLang(lang);
+    setSearchParams({ lang });
     onDropDownCick();
   };
   return (
@@ -59,7 +60,7 @@ export function LangButton() {
             cursor: "pointer",
           }}
         >
-          {selectedLang}
+          {searchParams.get("lang") || "EN"}
           {clicked ? (
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -93,6 +94,14 @@ export function LangButton() {
             }}
           >
             <Flex direction="column" bg="white" py={5.5} pl={8} pr={26} w={19}>
+              <Text
+                fz={{ base: "14px", md: "16px" }}
+                color="#451376"
+                fw={700}
+                onClick={() => onSelectedLang("EN")}
+              >
+                EN
+              </Text>
               <Text
                 fz={{ base: "14px", md: "16px" }}
                 color="#451376"

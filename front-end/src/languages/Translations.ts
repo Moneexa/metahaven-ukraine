@@ -1,108 +1,147 @@
-export default
-    {
-        "DONATE": {
-            "ES": "Donar",
-            "FR": "FAIRE UN DON",
-            "UA": "ПОЖЕРТВУЙТЕ"
-        },
-        "ACCESS THE LANDMARK'S HUB": {
-            "ES": "ACCEDER AL HUB DE Hitos",
-            "FR": "ACCÉDER AU HUB DES REPÈRES",
-            "UA": "ДОСТУП ДО ОРІЄНТІВ",
-        },
-        "ACCESS THE HUB": {
-            "ES": "ACCEDER AL CENTRO",
-            "FR": "ACCÉDER AU HUB",
-            "UA": "ДОСТУП ДО ХАБУ"
-        },
-        "DONATE NOW": {
-            "ES": "DONE AHORA",
-            "FR": "FAIRE UN DON MAINTENANT",
-            "UA": "ПОЖЕРТВУЙ ЗАРАЗ"
-        },
-        "UKRAINIAN LANDMARKS FOR POSTERITY": {
-            "ES": "HITO UCRANIANO PARA LA POSTERIDAD",
-            "FR": "DES REPÈRES UKRAINIENS POUR LA POSTÉRITÉ",
-            "UA": "УКРАЇНСЬКІ ПАМ'ЯТКИ ДЛЯ НАЩАДОК",
-        },
-        "METAHAVEN UKRAINE": {
-            "ES": "METAHAVEN UCRANIA",
-            "FR": "METAHAVEN UKRAINE",
-            "UA": "МЕТАХАВЕН УКРАЇНА",
-        },
-        "DIGITAL CONSERVATION AND AWARENESS EFFORTS": {
-            "ES": "CONSERVACIÓN DIGITALY ESFUERZOS DE CONCIENCIACIÓN",
-            "FR": "CONSERVATION NUMÉRIQUE ET EFFORTS DE SENSIBILISATION",
-            "UA": "ЦИФРОВЕ ЗБЕРЕЖЕННЯ І ОБІЗНАНОСТІ",
-        },
-        "AVAILABLE LANDMARKS": {
-            "ES": "LUGARES DISPONIBLES",
-            "FR": "REPÈRES DISPONIBLES",
-            "UA": "НАЯВНІ ОРІЄНТИ"
-        },
-        "KHARKIV GOVERNMENT BUILDING": {
-            "ES": "GOBIERNO DE JÁRKIV EDIFICIO",
-            "FR": "GOUVERNEMENT DE KHARKIV BÂTIMENT",
-            "UA": "ХАРКІВСЬКИЙ УРЯД БУДІВЛЯ"
-        },
-        "COMING SOON": {
-            "ES": "MUY PRONTO",
-            "FR": "À VENIR",
-            "UA": "НЕЗАБАРОМ"
-        },
-        "XXX I STREET": {
-            "ES": "CALLE XXX I,",
-            "FR": "XXX JE RUE,",
-            "UA": "ХХХ І ВУЛ."
-        },
-        "DISTRICT OF COLUMBIA 200006": {
-            "ES": "DISTRICT OF COLUMBIA 20006",
-            "FR": "DISTRICT DE COLUMBIA 20006",
-            "UA": "ОКРУГ КОЛУМБІЯ 20006",
-        },
-        "FOLLOW US HERE": {
-            "ES": "SÍGUENOS AQUÍ",
-            "FR": "SUIVEZ-NOUS ICI",
-            "UA": "СЛЕДУЙТЕ ЗА НАМИ ТУТ",
-        },
-        "METAVERSE": {
-            "ES": "METAVERSO",
-            "FR": "MÉTAVERS",
-            "UA": "МЕТАВСЕСВІТ",
-        },
-        "DONATE TO SUPPORT THE RECONSTRUCTION EFFORTS": {
-            "ES": "DONAR PARA APOYAR LOS ESFUERZOS DE RECONSTRUCCIÓN",
-            "FR": "FAIRE UN DON POUR SOUTENIR LES EFFORTS DE RECONSTRUCTION",
-            "UA": "ПОЖЕРТВУЙТЕ НА ПІДТРИМКУ РЕКОНСТРУКЦІЇ",
-        },
-        "I WOULD LIKE TO": {
-            "ES": "ME GUSTARÍA DAR",
-            "FR": "JE VOUDRAIS DONNER",
-            "UA": "Я ХОЧУ ДАТИ",
-        },
-        "RAISED": {
-            "ES": "AUMENTÓ",
-            "FR": "SOULEVÉ",
-            "UA": "ПІДНЯТА"
-        },
-        "DONATIONS": {
-            "ES": "AUMENTÓ",
-            "FR": "SOULEVÉ",
-            "UA": "ПІДНЯТА"
-        },
-        "GOAL": {
-            "ES": "META",
-            "FR": "BUT",
-            "UA": "МЕТА"
-        },
-        "DONOR WALL": {
-            "ES": "MURO ​​DE DONANTESMURO",
-            "FR": "MUR DES DONATEURS",
-            "UA": "ДОНОРСЬКА СТІНА"
-        },
-        "ABOUT PAGE": {
-            "ES": "ACERCA DE LA PÁGINA",
-            'FR': "À PROPOS DE LA PAGE",
-            "UA": "ПРО СТОРІНКУ"
-        }
-    }
+export default {
+  DONATE: {
+    EN: "DONATE",
+    ES: "Donar",
+    FR: "FAIRE UN DON",
+    UA: "ПОЖЕРТВУЙТЕ",
+  },
+  "ACCESS THE LANDMARK'S HUB": {
+    EN: "ACCESS THE LANDMARK'S HUB",
+    ES: "ACCEDER AL HUB DE Hitos",
+    FR: "ACCÉDER AU HUB DES REPÈRES",
+    UA: "ДОСТУП ДО ОРІЄНТІВ",
+  },
+  "ACCESS THE HUB": {
+    EN: "ACCESS THE HUB",
+    ES: "ACCEDER AL CENTRO",
+    FR: "ACCÉDER AU HUB",
+    UA: "ДОСТУП ДО ХАБУ",
+  },
+  "DONATE NOW": {
+    EN: "DONATE NOW",
+    ES: "DONE AHORA",
+    FR: "FAIRE UN DON MAINTENANT",
+    UA: "ПОЖЕРТВУЙ ЗАРАЗ",
+  },
+  "UKRAINIAN LANDMARKS FOR POSTERITY": {
+    EN: "UKRAINIAN LANDMARKS FOR POSTERITY",
+    ES: "HITO UCRANIANO PARA LA POSTERIDAD",
+    FR: "DES REPÈRES UKRAINIENS POUR LA POSTÉRITÉ",
+    UA: "УКРАЇНСЬКІ ПАМ'ЯТКИ ДЛЯ НАЩАДОК",
+  },
+  "METAHAVEN UKRAINE": {
+    EN: "METAHAVEN UKRAINE",
+    ES: "METAHAVEN UCRANIA",
+    FR: "METAHAVEN UKRAINE",
+    UA: "МЕТАХАВЕН УКРАЇНА",
+  },
+  "DIGITAL CONSERVATION AND AWARENESS EFFORTS1": {
+    EN: "DIGITAL CONSERVATION",
+    ES: "CONSERVACIÓN DIGITALY",
+    FR: "CONSERVATION NUMÉRIQUE",
+    UA: "ЦИФРОВЕ ЗБЕРЕЖЕННЯ",
+  },
+  "DIGITAL CONSERVATION AND AWARENESS EFFORTS2": {
+    EN: "AND",
+    ES: "ESFUERZOS",
+    FR: "ET",
+    UA: "І",
+  },
+  "DIGITAL CONSERVATION AND AWARENESS EFFORTS3": {
+    EN: "AWARENESS EFFORTS",
+    ES: "DE CONCIENCIACIÓN",
+    FR: "EFFORTS DE SENSIBILISATION",
+    UA: "ОБІЗНАНОСТІ",
+  },
+
+  "AVAILABLE LANDMARKS": {
+    EN: "AVAILABLE LANDMARKS",
+    ES: "LUGARES DISPONIBLES",
+    FR: "REPÈRES DISPONIBLES",
+    UA: "НАЯВНІ ОРІЄНТИ",
+  },
+  "KHARKIV GOVERNMENT BUILDING1": {
+    EN: "KHARKIV GOVERNMENT",
+    ES: "GOBIERNO DE JÁRKIV",
+    FR: "GOUVERNEMENT DE",
+    UA: "ХАРКІВСЬКИЙ УРЯД",
+  },
+  "KHARKIV GOVERNMENT BUILDING2": {
+    EN: "BUILDING",
+    ES: "EDIFICIO",
+    FR: "GOUVERNEMENT DE KHARKIV BÂTIMENT",
+    UA: "БУДІВЛЯ",
+  },
+  "COMING SOON": {
+    EN: "COMING SOON",
+    ES: "MUY PRONTO",
+    FR: "À VENIR",
+    UA: "НЕЗАБАРОМ",
+  },
+  "XXX I STREET": {
+    EN: "XXX I STREET",
+    ES: "CALLE XXX I,",
+    FR: "XXX JE RUE,",
+    UA: "ХХХ І ВУЛ.",
+  },
+  "DISTRICT OF COLUMBIA 200006": {
+    EN: "DISTRICT OF COLUMBIA 200006",
+    ES: "DISTRICT OF COLUMBIA 20006",
+    FR: "DISTRICT DE COLUMBIA 20006",
+    UA: "ОКРУГ КОЛУМБІЯ 20006",
+  },
+  "FOLLOW US HERE": {
+    EN: "FOLLOW US HERE",
+    ES: "SÍGUENOS AQUÍ",
+    FR: "SUIVEZ-NOUS ICI",
+    UA: "СЛЕДУЙТЕ ЗА НАМИ ТУТ",
+  },
+  METAVERSE: {
+    EN: "METAVERSE",
+    ES: "METAVERSO",
+    FR: "MÉTAVERS",
+    UA: "МЕТАВСЕСВІТ",
+  },
+  "DONATE TO SUPPORT THE RECONSTRUCTION EFFORTS": {
+    EN: "DONATE TO SUPPORT THE RECONSTRUCTION EFFORTS",
+    ES: "DONAR PARA APOYAR LOS ESFUERZOS DE RECONSTRUCCIÓN",
+    FR: "FAIRE UN DON POUR SOUTENIR LES EFFORTS DE RECONSTRUCTION",
+    UA: "ПОЖЕРТВУЙТЕ НА ПІДТРИМКУ РЕКОНСТРУКЦІЇ",
+  },
+  "I WOULD LIKE TO": {
+    EN: "I WOULD LIKE TO",
+    ES: "ME GUSTARÍA DAR",
+    FR: "JE VOUDRAIS DONNER",
+    UA: "Я ХОЧУ ДАТИ",
+  },
+  RAISED: {
+    EN: "RAISED",
+    ES: "AUMENTÓ",
+    FR: "SOULEVÉ",
+    UA: "ПІДНЯТА",
+  },
+  DONATIONS: {
+    EN: "DONATIONS",
+    ES: "AUMENTÓ",
+    FR: "SOULEVÉ",
+    UA: "ПІДНЯТА",
+  },
+  GOAL: {
+    EN: "GOAL",
+    ES: "META",
+    FR: "BUT",
+    UA: "МЕТА",
+  },
+  "DONOR WALL": {
+    EN: "DONOR WALL",
+    ES: "MURO ​​DE DONANTESMURO",
+    FR: "MUR DES DONATEURS",
+    UA: "ДОНОРСЬКА СТІНА",
+  },
+  "ABOUT PAGE": {
+    EN: "ABOUT PAGE",
+    ES: "ACERCA DE LA PÁGINA",
+    FR: "À PROPOS DE LA PAGE",
+    UA: "ПРО СТОРІНКУ",
+  },
+};
