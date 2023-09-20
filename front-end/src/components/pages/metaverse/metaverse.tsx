@@ -40,7 +40,7 @@ export const Metaverse = () => {
         style={{ display: "flex", flexDirection: "column", flexGrow: 1 }}
       >
         <iframe
-          src="https://streams.vagon.io/streams/2a0ee0ba-b550-4f59-a046-fb0776221157"
+          src="https://streams.vagon.io/streams/6c087943-62d2-4736-b293-3400a598a4a2"
           style={{ width: "100%", flexGrow: 1 }}
         />
       </Box>
