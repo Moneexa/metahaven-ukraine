@@ -1,13 +1,17 @@
 import { useState, useEffect } from "react";
 import { Flex, Text } from "@mantine/core";
 import "./slider.css";
-export const Slider = (props: { donate: number }) => {
+export const Slider = (props: {
+  donate: number;
+  onChange: (amount: number) => void;
+}) => {
   const [val, setVal] = useState("");
   useEffect(() => {
     setVal(`${props.donate}`);
   }, [props.donate]);
   const changeHandler = (event: { target: { value: string } }) => {
     setVal(event.target.value);
+    props.onChange(Number(event.target.value));
   };
   return (
     <>

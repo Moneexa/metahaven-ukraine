@@ -108,7 +108,7 @@ export const Donate = () => {
             </button>
           </Flex>
           <Container m={0} p={0} pt={58} maw={{ md: "564px" }}>
-            <Slider donate={donate} />
+            <Slider onChange={(amount) => setDonate(amount)} donate={donate} />
           </Container>
           <Container m={0} p={0} pt={72} w={{ base: "100%", md: "194px" }}>
             <button
