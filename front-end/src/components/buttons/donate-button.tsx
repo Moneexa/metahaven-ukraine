@@ -8,6 +8,7 @@ interface Params {
 export const DonateButton = ({ title }: Params) => {
   const navigate = useNavigate();
   const lang = useLang();
+
   return (
     <button
       style={{

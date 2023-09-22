@@ -10,6 +10,16 @@ export const Donate = () => {
   const handleDonate = (val: number) => {
     setDonate(val);
   };
+  const donateButtonClick = () => {
+    window.open(
+      `${
+        import.meta.env.DEV
+          ? import.meta.env.VITE_BACKEND_PORT_LOCAL
+          : import.meta.env.VITE_BACKEND_PORT_PROD
+      }/create-checkout-session/${donate}`,
+      "_blank"
+    );
+  };
   return (
     <Flex
       direction="column"
@@ -102,12 +112,14 @@ export const Donate = () => {
           </Container>
           <Container m={0} p={0} pt={72} w={{ base: "100%", md: "194px" }}>
             <button
+              disabled={donate <= 0}
               style={{
                 padding: "18px 10px",
                 width: "100%",
                 textTransform: "uppercase",
                 boxShadow: "14px 16px 8px 0px rgba(69, 19, 118, 0.50)",
               }}
+              onClick={donateButtonClick}
             >
               <Text fz={{ base: "14px", md: "16px" }} tt="uppercase" fw={400}>
                 {translations["DONATE NOW"][lang]}
