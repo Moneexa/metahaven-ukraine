@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vagon-backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: vagon-backend
+  template:
+    metadata:
+      labels:
+        app: vagon-backend
+    spec:
+      containers:
+        - name: vagon-backend
+          image: vagon.azurecr.io/backend:latest
+          ports:
+            - containerPort: 5000
+          envFrom:
+            - secretRef:
+                name: vagon-backend-secrets

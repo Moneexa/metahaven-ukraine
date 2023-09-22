@@ -1,15 +1,17 @@
 {
   "compilerOptions": {
-    "target": "es2016",                           
-    "module": "commonjs",     
-    "lib": ["es6"],                     
+    "target": "es2016",
+    "module": "commonjs",
+    "lib": [
+      "es6"
+    ],
     "allowJs": true,
-    "outDir": "build", 
-    "rootDir": "src",                         
-               "noImplicitAny": true,     
-           "esModuleInterop": true,  
-    "forceConsistentCasingInFileNames": true,        
-           "strict": true,  
-           "resolveJsonModule": true
+    "outDir": "dist",
+    "rootDir": "src",
+    "noImplicitAny": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "resolveJsonModule": true
   }
 }
