@@ -15,7 +15,7 @@ function generateAuthorizationHeader(requestType: string, payloadString: string,
 
 
 export async function makeGetRequest() {
-    const application_id = process.env.APP_ID
+    const application_id = process.env.VAGON_APP_ID
     const url = `https://api.vagon.io/app-stream-management/v2/streams?application_id=${application_id}`;
     const headers = {
         Authorization: generateAuthorizationHeader('GET', '/app-stream-management/v2/streams'),
