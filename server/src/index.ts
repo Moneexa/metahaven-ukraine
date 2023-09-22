@@ -1,6 +1,6 @@
 import express, { Request, Response, NextFunction } from "express";
 import cors from "cors";
-import { SECRET_KEY, PRODUCT_KEY } from "./configs"
+import { SECRET_KEY, PRODUCT_KEY, FRONT_END_PORT } from "./configs"
 import { assignStreams } from "./streaming-service/apis/assign-streams";
 import Stripe from "stripe"
 const app = express();
@@ -45,7 +45,7 @@ app.get('/create-checkout-session/:price', async (req, res) => {
         ],
         mode: 'payment',
         success_url: `http://localhost:5173?success=true`,
-        cancel_url: `http://localhost:5173?canceled=true`,
+        cancel_url: `${FRONT_END_PORT}?canceled=true`,
     });
 
     res.redirect(303, session.url || "");
