@@ -1,8 +1,8 @@
 import crypto from "crypto"
-
+import { API_SECRET } from "../../../configs"
 
 export function calculateHMAC(payload: string) {
-    const apiSecret = process.env.API_SECRET || ""
+    const apiSecret = API_SECRET
 
     // const api_secret_buffer = Buffer.from(apiSecret, 'hex')
     const hmac = crypto.createHmac('sha256', apiSecret)

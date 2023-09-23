@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { Text, Flex, Container, Card } from "@mantine/core";
+import { Text, Flex, Container } from "@mantine/core";
+import { Feedback } from "./feedback";
 import { Graph } from "./graph";
 import { Slider } from "./slider";
 import translations from "../../../languages/Translations";
@@ -129,73 +130,7 @@ export const Donate = () => {
         </Flex>
         <Graph />
       </Flex>
-      <Flex direction="column" pt={63}>
-        <Flex direction="row" align="center">
-          <Text
-            tt="uppercase"
-            fz={{ base: "14px", md: "16px" }}
-            fw={400}
-            c="white"
-            className="archivo-font"
-          >
-            {translations["DONOR WALL"][lang]}
-          </Text>
-          <button
-            className="archivo-font"
-            style={{
-              marginLeft: "9px",
-              padding: "8px",
-              background: "transparent",
-              border: "2px solid #FFF",
-              color: "white",
-            }}
-          >
-            361
-          </button>
-        </Flex>
-        <Flex direction="column" w="100%" pt={27} gap={26}>
-          <Card p={18}>
-            <Text
-              fz={{ base: "14px", md: "16px" }}
-              tt="uppercase"
-              fw={700}
-              className="archivo-font"
-            >
-              anonymous | $103.83
-            </Text>
-            <Text
-              fz={{ base: "14px", md: "16px" }}
-              pt={18}
-              fw={400}
-              className="archivo-font"
-            >
-              I admire all your soldiers. firefighters, social, helpers. You
-              Stand against the evil. do not give up. stay strong we are with
-              you.
-            </Text>
-          </Card>
-          <Card p={18}>
-            <Text
-              fz={{ base: "14px", md: "16px" }}
-              tt="uppercase"
-              fw={700}
-              className="archivo-font"
-            >
-              anonymous | $103.83
-            </Text>
-            <Text
-              fz={{ base: "14px", md: "16px" }}
-              pt={18}
-              fw={400}
-              className="archivo-font"
-            >
-              I admire all your soldiers. firefighters, social, helpers. You
-              Stand against the evil. do not give up. stay strong we are with
-              you.
-            </Text>
-          </Card>
-        </Flex>
-      </Flex>
+      <Feedback />
     </Flex>
   );
 };

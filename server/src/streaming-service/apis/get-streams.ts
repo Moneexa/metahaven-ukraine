@@ -1,9 +1,10 @@
 import { generateNonce } from './header/generate-nonce'
 import { calculateHMAC } from './header/hmac-calculate'
+import { API_KEY, APP_ID } from "../../configs"
 import axios from 'axios'
 
 function generateAuthorizationHeader(requestType: string, payloadString: string, requestBody?: string) {
-    const apiKey = process.env.API_KEY
+    const apiKey = API_KEY
 
     const nonce = generateNonce();
     const timestamp = Date.now().toString();
@@ -15,7 +16,7 @@ function generateAuthorizationHeader(requestType: string, payloadString: string,
 
 
 export async function makeGetRequest() {
-    const application_id = process.env.VAGON_APP_ID
+    const application_id = APP_ID
     const url = `https://api.vagon.io/app-stream-management/v2/streams?application_id=${application_id}`;
     const headers = {
         Authorization: generateAuthorizationHeader('GET', '/app-stream-management/v2/streams'),
