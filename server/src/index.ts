@@ -37,18 +37,6 @@ app.post('/webhook', express.raw({ type: 'application/json' }), (request, respon
         return;
     }
 
-    // Handle the event
-    switch (event.type) {
-        case 'checkout.session.completed':
-            const checkoutSessionCompleted = event.data.object;
-            // Then define and call a function to handle the event checkout.session.completed
-            break;
-        // ... handle other event types
-        default:
-            console.log(`Unhandled event type ${event.type}`);
-    }
-
-    // Return a 200 response to acknowledge receipt of the event
     response.send();
 });
 
@@ -61,7 +49,7 @@ app.get('/create-checkout-session/:price', async (req, res) => {
             line_items: [{
                 price_data: {
                     currency: 'usd',
-                    unit_amount: price*100,
+                    unit_amount: price * 100,
                     product_data: {
                         'name': 'Metahaven Ukrain Donation',
                     },
@@ -79,8 +67,8 @@ app.get('/create-checkout-session/:price', async (req, res) => {
                 },
             ],
             mode: 'payment',
-            success_url: `http://localhost:5173?success=true`,
-            cancel_url: `${FRONT_END_PORT}?canceled=true`,
+            success_url: `${FRONT_END_PORT}/checked?success=true`,
+            cancel_url: `${FRONT_END_PORT}/failed?canceled=true`,
         });
         res.redirect(303, session.url || "");
     } catch (error) {
