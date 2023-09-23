@@ -54,32 +54,40 @@ app.post('/webhook', express.raw({ type: 'application/json' }), (request, respon
 
 
 app.get('/create-checkout-session/:price', async (req, res) => {
-    const session = await stripe.checkout.sessions.create({
-        line_items: [
-            {
-                // Provide the exact Price ID (for example, pr_1234) of the product you want to sell
-
-                price: PRODUCT_KEY,
-                quantity: Number(req.params.price) || 0,
-            },
-
-        ],
-        custom_fields: [
-            {
-                key: 'supportMessage',
-                label: {
-                    type: 'custom',
-                    custom: 'Support Message',
+    try {
+        const price = parseInt(req.params.price);
+        const session = await stripe.checkout.sessions.create({
+            submit_type: "donate",
+            line_items: [{
+                price_data: {
+                    currency: 'usd',
+                    unit_amount: price*100,
+                    product_data: {
+                        'name': 'Metahaven Ukrain Donation',
+                    },
                 },
-                type: 'text',
-            },
-        ],
-        mode: 'payment',
-        success_url: `${FRONT_END_PORT}/checked?success=true`,
-        cancel_url: `${FRONT_END_PORT}/failed?canceled=true`,
-    });
-
-    res.redirect(303, session.url || "");
+                quantity: 1
+            }],
+            custom_fields: [
+                {
+                    key: 'supportMessage',
+                    label: {
+                        type: 'custom',
+                        custom: 'Support Message',
+                    },
+                    type: 'text',
+                },
+            ],
+            mode: 'payment',
+            success_url: `http://localhost:5173?success=true`,
+            cancel_url: `${FRONT_END_PORT}?canceled=true`,
+        });
+        res.redirect(303, session.url || "");
+    } catch (error) {
+        // @ts-ignore
+        console.error(error.message);
+        res.status(502).send("Couldn't process at the moment. Please try again later.")
+    }
 });
 
 
