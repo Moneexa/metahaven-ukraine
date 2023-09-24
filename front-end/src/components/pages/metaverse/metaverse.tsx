@@ -17,7 +17,6 @@ export const Metaverse = () => {
   const iframeRef = useRef<HTMLIFrameElement>(null);
   const [iframeContainerWidth, setIframeContainerWidth] = useState<number>(0);
   const [isFullScreen, setIsFullScreen] = useState(false);
-  const [showGuide, setShowGuide] = useState(true);
   const [error, setError] = useState(false);
 
 
@@ -43,10 +42,6 @@ export const Metaverse = () => {
   }
 
   useEffect(() => {
-    // Hiding guides
-    setTimeout(() => {
-      setShowGuide(false)
-    }, 3000);
     const width = contentContainertRef.current?.getBoundingClientRect().width || 0;
     // Update the state with the width
     setIframeContainerWidth(width);
@@ -100,20 +95,20 @@ export const Metaverse = () => {
       </Container>
       <Box
         mx={{ md: "130px" }}
-        my={{ md: "65px" }}
+        mb={{ md: "65px" }}
         style={{ display: "flex", flexDirection: "column", position: "relative", maxWidth: '150vh', height: iframeContainerWidth / 1.78  }}
         ref={contentContainertRef}
       >
         {error && <Notification onClose={() => setError(false)} icon={<IconX style={{ width: rem(20), height: rem(20) }} />} color="red" title="Bummer!">
         Something went wrong while loaing stream
       </Notification>}
+        <Guide /> 
         {loading && <>Loading...</>}
         {!loading && link && (
           <>
-            {showGuide && <Guide /> }
             <Box style={{ width: "100%", height: '100%'}} ref={iframeContainertRef}>
-              <iframe ref={iframeRef} src={link} style={{ width: "100%", height: '100%', position: "absolute", top: 0, left: 0 }} />
-              <Box pos="absolute" bottom={10} right={10} style={{cursor: "pointer"}}>
+              <iframe ref={iframeRef} src={link} style={{ width: "100%", height: '100%', position: "absolute", top: 62, left: 0 }} />
+              <Box pos="absolute" bottom={-60} right={10} style={{cursor: "pointer"}}>
                 {isFullScreen?<IconMinimize onClick={toggleFullScreen} />:<IconMaximize onClick={toggleFullScreen} />}
               </Box>
             </Box>
