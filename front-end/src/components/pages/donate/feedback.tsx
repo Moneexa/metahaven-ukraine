@@ -6,31 +6,30 @@ import { useLang } from "../../../hooks/lang";
 
 export const Feedback = () => {
   const lang = useLang();
-  const [donorName, setDonorName] = useState("");
-  const [amount, setAmount] = useState("");
-  const [message, setMessage] = useState("");
+  const [respList, setRespList] = useState([
+    { name: "", amount: "", message: "" },
+  ]);
   useEffect(() => {
     async function func() {
       try {
-        const response = await axios.post(
-          `${import.meta.env.VITE_WEBHOOK_ENDPOINT}`
+        const response = await axios.get(
+          `${import.meta.env.VITE_BACKEND_PORT_LOCAL}/messages/last-two`
         );
         if (response) {
-          const messageExtracted = response?.data.customFields?.[0].text.value;
-          setMessage(messageExtracted);
-          const amountTotal = (
-            parseFloat(response?.data.amount_total) / 100
-          ).toFixed(2);
-          setAmount(`${amountTotal}`);
-          const donor = response?.data.customer_details.name;
-          setDonorName(donor);
+          const arr: { name: string; amount: string; message: string }[] = [];
+          response.data.map(
+            (value: { name: string; amount: string; message: string }) => {
+              arr.push(value);
+            }
+          );
+          setRespList(arr);
         }
       } catch (err) {
         console.log(err);
       }
     }
     func();
-  }, [message, donorName, amount]);
+  }, [respList]);
   return (
     <>
       <Flex direction="column" pt={63}>
@@ -60,24 +59,28 @@ export const Feedback = () => {
       </Flex>
 
       <Flex direction="column" w="100%" pt={27} gap={26}>
-        <Card p={18}>
-          <Text
-            fz={{ base: "14px", md: "16px" }}
-            tt="uppercase"
-            fw={700}
-            className="archivo-font"
-          >
-            {donorName} | {amount}
-          </Text>
-          <Text
-            fz={{ base: "14px", md: "16px" }}
-            pt={18}
-            fw={400}
-            className="archivo-font"
-          >
-            {message}
-          </Text>
-        </Card>
+        {respList.map((resp) => {
+          return (
+            <Card p={18}>
+              <Text
+                fz={{ base: "14px", md: "16px" }}
+                tt="uppercase"
+                fw={700}
+                className="archivo-font"
+              >
+                {resp.name} | {resp.amount}
+              </Text>
+              <Text
+                fz={{ base: "14px", md: "16px" }}
+                pt={18}
+                fw={400}
+                className="archivo-font"
+              >
+                {resp.message}
+              </Text>
+            </Card>
+          );
+        })}
       </Flex>
     </>
   );

@@ -1,10 +1,23 @@
-import express, { Request, Response, NextFunction } from "express";
+import { SECRET_KEY, DB_URL, FRONT_END_PORT, SIGNING_KEY } from "./configs"
+import express, { Request, Response, NextFunction, } from "express";
 import cors from "cors";
+import { router } from "./support-messages/router";
 import Stripe from "stripe"
+import mongoose from "mongoose";
+import { StripeResponse } from "./stripTypes";
 const port = process.env.PORT || 5000;
 
-import { SECRET_KEY, PRODUCT_KEY, FRONT_END_PORT, SIGNING_KEY } from "./configs"
 import { assignStreams } from "./streaming-service/apis/assign-streams";
+import { Message } from "./support-messages/model";
+
+
+mongoose.connect(DB_URL);
+
+const db = mongoose.connection;
+db.on('error', console.error.bind(console, 'Connection error:'));
+db.once('open', () => {
+    console.log('Connected to the database!');
+});
 
 const app = express();
 
@@ -12,7 +25,10 @@ const stripe = new Stripe(SECRET_KEY, {
     apiVersion: '2023-08-16',
 });
 
+
 app.use(cors());
+// app.use(express.json())
+app.use(express.urlencoded({ extended: true })); // New: replaces body-parser for URL-encoded form data
 app.post("/api/streams", async (req, res) => {
     try {
         // Access the data from the middleware, e.g., res.locals.assignStreamsData
@@ -24,19 +40,36 @@ app.post("/api/streams", async (req, res) => {
         res.status(500).json(error);
     }
 });
-
-app.post('/webhook', express.raw({ type: 'application/json' }), (request, response) => {
+app.use("/messages", router);
+app.post('/webhook', express.raw({ type: 'application/json' }), async (request: Request, response: Response) => {
     const sig = request.headers['stripe-signature'] || "";
 
     let event;
 
     try {
         event = stripe.webhooks.constructEvent(request.body, sig, SIGNING_KEY);
+        if (event.type === "checkout.session.completed") {
+            const eventObjectype = event.data.object as StripeResponse
+            const payload = {
+                name: eventObjectype.customer_details.name,
+                amount: `$${(parseFloat(eventObjectype.amount_total) / 100).toFixed(2)}`,
+                message: eventObjectype.custom_fields?.[0]?.text?.value
+            }
+            try {
+                const newMessage = await Message.create(payload);
+                response.status(201).json(newMessage);
+            } catch (error: any) {
+                console.error(error?.message)
+                response.status(500).json({ message: 'Error posting message' });
+            }
+
+
+        }
     } catch (err) {
+        console.log(err)
         response.status(400).send(`Webhook Error: ${err}`);
         return;
     }
-
     response.send();
 });
 

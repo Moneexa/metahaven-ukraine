@@ -21,11 +21,14 @@
     "typescript": "^5.2.2"
   },
   "dependencies": {
+    "@prisma/client": "^5.3.1",
+    "@types/mongoose": "^5.11.97",
     "axios": "^1.5.0",
     "cors": "^2.8.5",
     "crypto": "^1.0.1",
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
+    "mongoose": "^7.5.2",
     "stripe": "^13.7.0"
   }
 }
