@@ -13,7 +13,7 @@ export const Feedback = () => {
     async function func() {
       try {
         const response = await axios.get(
-          `${import.meta.env.VITE_BACKEND_PORT_LOCAL}/messages/last-two`
+          `${import.meta.env.VITE_BACKEND_PORT_PROD}/messages/last-two`
         );
         if (response) {
           const arr: { name: string; amount: string; message: string }[] = [];
