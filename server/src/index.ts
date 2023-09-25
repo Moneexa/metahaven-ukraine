@@ -67,8 +67,8 @@ app.get('/create-checkout-session/:price', async (req, res) => {
                 },
             ],
             mode: 'payment',
-            success_url: `${FRONT_END_PORT}/checked?success=true`,
-            cancel_url: `${FRONT_END_PORT}/failed?canceled=true`,
+            success_url: `${FRONT_END_PORT}/checked`,
+            cancel_url: `${FRONT_END_PORT}/failed`,
         });
         res.redirect(303, session.url || "");
     } catch (error) {
