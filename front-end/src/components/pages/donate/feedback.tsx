@@ -13,7 +13,7 @@ export const Feedback = () => {
     async function func() {
       try {
         const response = await axios.get(
-          `${import.meta.env.VITE_BACKEND_PORT_PROD}/messages/last-two`
+          `${import.meta.env.VITE_BACKEND_PORT_PROD}/api/messages/last-two`
         );
         if (response) {
           const arr: { name: string; amount: string; message: string }[] = [];
@@ -59,9 +59,9 @@ export const Feedback = () => {
       </Flex>
 
       <Flex direction="column" w="100%" pt={27} gap={26}>
-        {respList.map((resp) => {
+        {respList.map((resp, index) => {
           return (
-            <Card p={18}>
+            <Card p={18} key={index}>
               <Text
                 fz={{ base: "14px", md: "16px" }}
                 tt="uppercase"

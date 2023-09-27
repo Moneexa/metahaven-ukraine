@@ -1,4 +1,5 @@
 import { SECRET_KEY, DB_URL, FRONT_END_PORT, SIGNING_KEY } from "./configs"
+import { router as router2 } from "./user/router";
 import express, { Request, Response, NextFunction, } from "express";
 import cors from "cors";
 import { router } from "./support-messages/router";
@@ -27,7 +28,6 @@ const stripe = new Stripe(SECRET_KEY, {
 
 
 app.use(cors());
-// app.use(express.json())
 app.use(express.urlencoded({ extended: true })); // New: replaces body-parser for URL-encoded form data
 app.post("/api/streams", async (req, res) => {
     try {
@@ -40,7 +40,8 @@ app.post("/api/streams", async (req, res) => {
         res.status(500).json(error);
     }
 });
-app.use("/messages", router);
+app.use("/api/messages", router);
+app.use("/api/auth", express.json(), router2)
 app.post('/webhook', express.raw({ type: 'application/json' }), async (request: Request, response: Response) => {
     const sig = request.headers['stripe-signature'] || "";
 
@@ -53,7 +54,8 @@ app.post('/webhook', express.raw({ type: 'application/json' }), async (request: 
             const payload = {
                 name: eventObjectype.customer_details.name,
                 amount: `$${(parseFloat(eventObjectype.amount_total) / 100).toFixed(2)}`,
-                message: eventObjectype.custom_fields?.[0]?.text?.value
+                message: eventObjectype.custom_fields?.[0]?.text?.value,
+                show: false,
             }
             try {
                 const newMessage = await Message.create(payload);

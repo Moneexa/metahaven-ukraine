@@ -6,6 +6,8 @@ import { Donate } from "./components/pages/donate/donate.tsx";
 import { AboutPage } from "./components/pages/about-page/about-page.tsx";
 import { Success } from "./components/pages/payment-status-pages/Success.tsx";
 import { Failed } from "./components/pages/payment-status-pages/Failed.tsx";
+import { AdminDashboard } from "./components/pages/admin/AdminDashboard.tsx";
+import { LoginAdmin } from "./components/pages/admin/LoginAdmin.tsx";
 
 import {
   Route,
@@ -31,6 +33,8 @@ export const router = createBrowserRouter(
       <Route path="about-page" element={<AboutPage />} />
       <Route path="checked" element={<Success />} />
       <Route path="failed" element={<Failed />} />
+      <Route path="admin" element={<AdminDashboard />} />
+      <Route path="login" element={<LoginAdmin />} />
     </Route>
   )
 );
