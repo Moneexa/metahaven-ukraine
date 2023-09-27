@@ -23,10 +23,9 @@ export const LoginAdmin = () => {
         localStorage.setItem("jwtToken", token);
         navigate("/admin");
       }
-
-      // Store the token in localStorage or a cookie for future requests.
     } catch (error) {
-      console.error("Login failed:", error);
+      alert("Login Failed");
+      console.error("Login failed");
     }
   };
   return (
